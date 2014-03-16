@@ -1,0 +1,20 @@
+<table class="table">
+  <tr>
+    <th>Resource Name</th>
+    <th>DB Name</th>
+    <th>Write IP</th>
+    <th>Read IP</th>
+    <th>Location</th>
+  </tr>
+  <tbody>
+  <% for l in @locators %>
+    <tr>
+      <td><%= l.resource %></td>
+      <td><%= l.dbname %></td>
+      <td><%= l.rw %></td>
+      <td><%= l.ro %></td>
+      <td><%= l.server_location_id %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

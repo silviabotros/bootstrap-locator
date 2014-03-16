@@ -1,3 +1,4 @@
+require 'active_record'
 require 'rubygems'
 require 'sinatra'
 
@@ -42,3 +43,5 @@ end
 get '/secure/place' do
   erb "This is a secret place that only <%=session[:identity]%> has access to!"
 end
+require_relative 'models/init'
+require_relative 'controllers/init'
