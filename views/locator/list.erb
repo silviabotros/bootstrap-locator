@@ -1,3 +1,8 @@
+<% if flash[:notice] %>
+<div id='flash' class="alert alert-success alert-dismissable">
+    <%= flash[:notice] %>
+</div>
+<% end %>
 <table class="table">
   <tr>
     <th>Resource Name</th>

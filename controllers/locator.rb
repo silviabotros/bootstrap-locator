@@ -1,6 +1,22 @@
 require 'flash'
 require 'sinatra/flash'
+require 'bcrypt'
 
+enable :sessions
+
+helpers do
+  def login?
+    if session[:username].nil?
+      return false
+    else
+      return true
+    end
+  end
+  
+  def username
+    return session[:username]
+  end 
+end
 get '/locator/?' do
   @locators = Locator.all
   erb :'locator/list'
@@ -35,12 +51,16 @@ end
 
 put '/locator/edit/:id' do
   @locator = Locator.find(params[:id])
-  if @locator.update_attributes(params[:post])
-    @locator.save
+  if @locator.update_attributes(params[:locator])
     flash[:notice] = "Locator row updated"
     redirect("/locator/?")
   else
     flash[:error] = "There was an error updating this record"
     redirect("/locator/edit/#{params[:id]}")
   end
+end
+
+delete '/locator/delete/:id' do
+  @locator = Locator.find(params[:id]).destroy
+  redirect("/locator/?")
 end

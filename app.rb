@@ -45,3 +45,4 @@ get '/secure/place' do
 end
 require_relative 'models/init'
 require_relative 'controllers/init'
+require_relative 'helpers/init' 

@@ -1,6 +1,11 @@
 <h1><%= @verb %> Locator</h1>
 <div id='flash'>
   <form action="/locator<%= @form_redirect %>" method="post" role="form" class="form-horizontal">
+  <% if flash[:error] %>
+  <div id='flash' class="alert alert-danger alert-dismissable">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
  <div class="form-group">
   <input type="hidden" name="_method" value="put" /> 
   <label for="locator_resource">Resource Name</label>
