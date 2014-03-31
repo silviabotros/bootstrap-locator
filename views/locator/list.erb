@@ -5,6 +5,7 @@
     <th>Write IP</th>
     <th>Read IP</th>
     <th>Location</th>
+    <th></th>
   </tr>
   <tbody>
   <% for l in @locators %>
@@ -14,6 +15,7 @@
       <td><%= l.rw %></td>
       <td><%= l.ro %></td>
       <td><%= l.server_location_id %></td>
+      <td><a href="/locator/edit/<%= l.id %>">Edit</a></td>
     </tr>
   <% end %>
   </tbody>

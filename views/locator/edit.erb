@@ -1,0 +1,27 @@
+<h1><%= @verb %> Locator</h1>
+<div id='flash'>
+  <form action="/locator<%= @form_redirect %>" method="post" role="form" class="form-horizontal">
+ <div class="form-group">
+  <input type="hidden" name="_method" value="put" /> 
+  <label for="locator_resource">Resource Name</label>
+  <br />
+  <input id="locator_resource" name="locator[resource]" type="text" value="<%= @locator.resource %>" class="form-control" placeholder="Text input" />
+  <br />
+  <label for="locator_dbname">Schema Name</label>
+  <input id="locator_dbname" name="locator[dbname]" type="text" value="<%= @locator.dbname %>" class="form-control" placeholder="Text input" />
+  <br />
+  <label for="locator_ro">Read IP</label><br />
+  <input id="locator_ro" name="locator[ro]" type="text" value="<%= @locator.ro %>" class="form-control" placeholder="Text input"/>
+  <br />
+ 
+  <label for="locator_rw">Write IP</label><br />
+  <input id="locator_rw" name="locator[rw]" type="text" value="<%= @locator.rw %>" class="form-control" placeholder="Text input"/>
+  <br />
+  <label for="locator_server_location_id">Server Location</label>
+  <input id="locator_location_id" name="locator[server_location_id]" type="text" value="<%= @locator.server_location_id %>" class="form-control" placeholder="Text input" />
+  <br />
+  <br />
+  <input type="submit" value="<%= @verb %> Locator" class="btn btn-primary btn-block"/>
+  
+</div>
+</form>   
